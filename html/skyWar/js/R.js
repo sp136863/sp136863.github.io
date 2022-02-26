@@ -1,0 +1,18 @@
+let images = {
+  "background": "images/background.png",
+  "start": "images/newgame.png",
+  "hero": "images/blueplane.png",
+  "background": "images/background.png",
+  "mybullet": "images/bullet1.png",
+  "enmy1": "images/enmy_f1.png",
+  "enmy2": "images/enmy_f2.png",
+  "enmy3": "images/enmy_f3.png",
+  "enmy4": "images/enmy_f4.png",
+  "enmy5": "images/enmy_f5.png",
+  "enmy6": "images/enmy_f6.png",
+  "enmy7": "images/enmy_f7.png",
+  "enmy8": "images/enmy_f8.png",
+  "boss1": "images/boss1.png",
+  "boss2": "images/boss2.png",
+  "boss1bullet": "images/enmy_bullet1.png",
+}

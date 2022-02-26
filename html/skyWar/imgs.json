@@ -1,0 +1,16 @@
+{
+  "images": [
+    {
+      "name": "background",
+      "url": "imgs/background.png"
+    },
+    {
+      "name": "plane",
+      "url": "imgs/plane.png"
+    },
+    {
+      "name": "start",
+      "url": "imgs/newgame.png"
+    }
+  ]
+}

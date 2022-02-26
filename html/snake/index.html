@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* position: absolute; */
+    }
+
+    #start {
+      position: absolute;
+      top: 110px;
+      left: 100px;
+      width: 55px;
+      height: 30px;
+      border: 1px gray solid;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #level {
+      position: absolute;
+      top: 110px;
+      left: 165px;
+      width: 98px;
+      height: 30px;
+      border: 1px gray solid;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    #snake {
+      position: absolute;
+      top: 150px;
+      left: 100px;
+      width: 900px;
+      height: 600px;
+    }
+
+    #snake>div:nth-child(1) {
+      background-color: rgb(255, 0, 0) !important;
+      border-radius: 50% !important;
+    }
+
+    #snake>div {
+      border-radius: 5px;
+    }
+
+    #txt {
+      position: absolute;
+      top: 105px;
+      left: 400px;
+    }
+
+    #txt>div {
+      width: 500px;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="txt">
+    <div>注意:游戏会随着蛇的长度变长而加快速度，左上角有时间</div>
+    <div>上下左右控制移动</div>
+  </div>
+  <div id="level"></div>
+  <div id="start">开始</div>
+  <div id="container"></div>
+  <div id="snake"></div>
+  <script src="./js/game.js"></script>
+  <script src="./js/map.js"></script>
+  <script src="./js/food.js"></script>
+  <script src="./js/snake.js"></script>
+</body>
+
+</html>

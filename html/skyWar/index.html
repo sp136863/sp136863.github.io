@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>skyWar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #main {
+      position: relative;
+      width: 400px;
+      height: 550px;
+    }
+
+    #canvas,
+    #can_vas {
+      border: 1px solid gray;
+      vertical-align: top;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    /* #canvas {
+      z-index: 1;
+    } */
+
+    #can_vas {
+      display: none;
+    }
+
+    .can_vas {
+      display: block !important;
+      z-index: 1;
+    }
+
+    .hand {
+      cursor: pointer;
+    }
+
+    #txt {
+      position: absolute;
+      top: 560px;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="txt">
+    <div>注意:己方子弹会在分数到达设定值时变为两排,</div>
+    <div>上下左右控制移动,点击按钮开始游戏.</div>
+    <div>没有适配</div>
+  </div>
+  <div id="main">
+    <canvas width="400" height="550" id="canvas"></canvas>
+    <!-- <canvas width="400" height="550" id="can_vas"></canvas> -->
+  </div>
+</body>
+<script src="./js/R.js"></script>
+<script src="./js/Background.js"></script>
+<script src="./js/Game.js"></script>
+<script src="./js/Hero.js"></script>
+<script src="./js/MyBullet.js"></script>
+<script src="./js/Emmy.js"></script>
+<script src="./js/Boss.js"></script>
+<script src="./js/Boss1Bullet.js"></script>
+<script src="./js/tool.js"></script>
+<script>
+  let game = new Game();
+</script>
+
+</html>
