@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas width="512" height="512" id="canvas"></canvas>
+</body>
+<script src="R.js"></script>
+<script>
+  let source = [
+    [{ type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'mountain' }],
+    [{ type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }],
+    [{ type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }],
+    [{ type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }],
+    [{ type: 'mountain' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'mountain' }],
+    [{ type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }, { type: 'grass' }],
+    [{ type: 'tree' }, { type: 'tree' }, { type: 'tree' }, { type: 'tree' }, { type: 'tree' }, { type: 'mountain' }, { type: 'mountain' }, { type: 'grass' }],
+    [{ type: 'tree' }, { type: 'tree' }, { type: 'tree' }, { type: 'tree' }, { type: 'mountain' }, { type: 'mountain' }, { type: 'mountain' }, { type: 'mountain' }]
+  ]
+  let canvas = document.getElementById('canvas');
+  let ctx = canvas.getContext('2d');
+  let xcount = 160;
+  let ycount = 160;
+  let step = 1;
+  let ok = false;
+  let code = 'ArrowRight';
+  let imga = new Image();
+  imga.src = '1_52.png';
+  let img = new Image();
+  img.src = 'map_01.png';
+  img.onload = function (e) {
+    function animate() {
+      // step++;
+      // if (step % 10 === 0) {
+      if (step && ok) {
+        if (code == "ArrowUp") {
+          ycount--;
+        }
+        if (code == "ArrowDown") {
+          ycount++;
+        }
+        if (code == "ArrowLeft") {
+          xcount--;
+        }
+        if (code == "ArrowRight") {
+          xcount--;
+          if ((xcount + 256) % 16 === 0) {
+            console.log((xcount + 256) / 16);
+            let y = 26;
+            if (CoordinateSystem[(xcount + 256) / 16 - 1][(ycount + 256) / 16] === 'm') {
+              console.log(666);
+
+            }
+          }
+        }
+      }
+      ctx.clearRect(0, 0, 512, 512);
+      ctx.drawImage(img, xcount, ycount, 512, 512, 0, 0, 512, 512);
+      ctx.drawImage(imga, 256, 256, 16, 16);
+      // }
+      // if (xcount)
+      requestAnimationFrame(animate);
+    }
+    animate();
+    window.onkeydown = function (e) {
+      ok = true;
+      e.code = code;
+    }
+    window.onkeyup = function () {
+      ok = false;
+
+      if (xcount % 16 < 8) {
+        xcount = Math.floor(xcount);
+      } else {
+        xcount = Math.ceil(xcount);
+      }
+      if (ycount % 16 < 8) {
+        ycount = Math.floor(ycount);
+      } else {
+        ycount = Math.ceil(ycount);
+      }
+    }
+  }
+
+</script>
+
+</html>
